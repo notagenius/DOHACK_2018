@@ -14,10 +14,15 @@ for the limitation of the measuring tool, our experiment tells that the precisio
 
 ## better WEB Structure
 Flask + SQL + Python
-DONE
+DONE!!
 
 
 ## better UI is structured
 after the basic php front-end is succesfully made. we put our hand on better UI. An interface powered with D3.js and layers.
-Undergoing
-![alt text](https://raw.githubusercontent.com/notagenius/DOHACK_2018/master/doc/formula.png)
+Undergoing!!
+![alt text](https://raw.githubusercontent.com/notagenius/DOHACK_2018/master/doc/floorplan.png)
+
+## TEAM
+Weiling Xi
+Yifan Gao
+YIfan Yang
