@@ -1,8 +1,8 @@
 (function(){
   "use strict";
 
-  var w = 720;
-  var h = 487;
+  var w = 1000;
+  var h = 500;
 
   var xscale = d3.scale.linear()
            .domain([0,50.0])

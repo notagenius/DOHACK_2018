@@ -1,6 +1,7 @@
 'use strict';
 var width = 900;
 var height = 400;
+
 var t0 = Date.now();
 
 var svg = d3.select('.container')
@@ -9,12 +10,9 @@ var svg = d3.select('.container')
   .attr('height', height);
 
 var planets = [
-  { R: 100, r: 5, speed: 5, phi0: 90 }
+  { R: 30, r: 5, speed: 8, phi0: 90 }
 ];
 
-var planets_2 = [
-  { R: 150, r: 5, speed: 5, phi0: 90 }
-];
 
 
 var container = svg.append('g')
