@@ -4665,7 +4665,6 @@ static int dump_sta_to_tcp(void)
 		G.maxstas++;
 		G.numstas++;
 		
-		
 	        printf("%02X:%02X:%02X:%02X:%02X:%02X, p = %03d\n",
 					st_cur->stmac[0],
 					st_cur->stmac[1],
@@ -4713,13 +4712,14 @@ static int dump_sta_to_tcp(void)
                    //--modification end
                    
                    
+                   
 		   st_cur = st_cur->next;
 	}
 	
 	
 	//if (G.numstas > G.maxnumstas) G.maxnumstas = G.numstas;
 	
-	printf("\n>> station_num = %d\n", G.numaps);
+	printf("\n>> station_num = %d\n", G.numstas);
 	
 	
 	//---modification start---
@@ -4727,16 +4727,20 @@ static int dump_sta_to_tcp(void)
 	
         sockfd = socket(AF_INET, SOCK_STREAM,0);
         connect(sockfd, (struct sockaddr *)&serv_addr, sizeof(serv_addr));
-                           
+        
+        printf("\n>> flag1");
+                      
         char message[BUFSIZE];
-        sprintf(message,"GET http://52.58.101.149/count.php?COUNT=%03d&token=8888 \r\n\r\n",
-						G.numstas);
-                                
+        
+        sprintf(message,"GET http://52.58.101.149/count.php?COUNT=%03d&token=8888 \r\n\r\n", G.numstas);
+        
+        printf("\n>> flag2");
+                   
         tmp = write(sockfd, message, strlen(message));
         memset(message, 0, sizeof(message));
 	
 	//---modification end---
-	
+	printf("\n>> flag3");
 
 	return 0;
 }
@@ -7127,7 +7131,7 @@ int main(int argc, char *argv[])
 
 //---modification sart-
 //---the following code setup the tcp sockets
-/*
+
     printf(">> connecting to %s and port %d\n", IP_ADDRESS, PORT);
     
     if((sockfd = socket(AF_INET, SOCK_STREAM,0)) <0)
@@ -7151,8 +7155,6 @@ int main(int argc, char *argv[])
     
 
 //---modification end-
-*/
-
 
 	struct AP_info *ap_cur, *ap_prv, *ap_next;
 	struct ST_info *st_cur, *st_next;
