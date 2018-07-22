@@ -1,0 +1,6 @@
+flask
+flask-socketio
+flask-bcrypt
+flask-mail
+eventlet
+python-dateutil
